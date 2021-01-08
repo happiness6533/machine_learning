@@ -1,27 +1,28 @@
 ## 머신러닝 관점 정리중...
 1. 풀이 방법: 정보의 추상화
-    - 확률대수관점: MLE
-    - 기하관점: 벡터공간 변환
+    - 확률대수관점 MLE + 기하관점 벡터공간 변환
     
-2. 지도 학습: 분류 or 예측
+2. 지도 학습: 데이터 분류 trained by x and y > x를 넣으면 확률 y를 알려주는 확률분포를 얻는다
     - 고전: svm hmm naive bayes regression
-    - 현대: dnn cnn rnn trans bert gpt
+    - 현대: dnn cnn(비시계열 데이터) rnn trans bert gpt(시계열 데이터)
     - 응용: yolo resnet style-transfer concentrate
 
-3. 비지도학습: 셀프 분류 or 생성
-    - 이진분류: gaussian abnormaly > svm
-    - 다중분류: k-means > gm > em > vi
-    - 차원축소: pca kpca t-sne encoder
-    - 생성: decoder
+3. 비지도학습: 데이터 분류 trained by x > x를 넣으면 확률 y를 알려주는 확률분포를 얻는다
+    - 이진분류: gaussian abnormaly > svm: 1개의 확률분포를 얻는다
+    - 다중분류: k-means > gm > em > vi: 여러개의 확률분포를 얻는다
+    
+4. 지도 + 비지도: 데이터 생성 by latent z
+    - find latent: pca kpca t-sne encoder > x를 넣으면 latent z를 알려주는 확률분포를 얻는다
+    - create data: decoder > 데이터를 높은 확률로 샘플링하는 확률분포를 얻는다
     - 차원축소 이진분류 단일생성: encoder + decoder = ae
     - 차원축소 다중분류 + 다중생성: vae > gan
 
-4. 강화학습: 셀프 판단 or 행동
+5. 강화학습: 셀프 판단 or 행동
     - 정책기반: 폴리시이터 q러닝 reinforce
     - 가치기반: 밸류이터 sarsa
     - 가치정책기반: deepsarsa dqn a2c
 
-5. 텐서플로우와 케러스를 활용해서 핵심 알고리즘을 구현하고 현실의 문제를 해결
+6. 텐서플로우와 케라스를 활용해서 핵심 알고리즘을 구현하고 현실의 문제를 해결
 
 ## 강화학습 관점 정리중...
 1. 주어진 문제가 마르코프하다고 가정하고 문제를 아래와 같이 재구성한다 = mdp
