@@ -26,7 +26,7 @@ class DqnAgent:
         self.batch_size = 64
         self.discount_factor = 0.99
 
-        self.load_q_network = False
+        self.load_q_network = True
         if self.load_q_network:
             self.q_network.load_weights('./save/q_network.h5')
             self.epsilon = 0

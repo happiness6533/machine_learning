@@ -1,1 +1,1 @@
-ROOT_DIR = 'C:\\Users\\happiness0110\\developer\\projects\\data_projects\\machine_learning'
+ROOT_DIR = 'C:\\Users\\happiness0110\\developer\\machine_learning_projects'

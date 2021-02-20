@@ -24,18 +24,18 @@ X, Y, n_values, indices_values = load_music_utils()
 
 # lstmsingle cell 정의
 
-# lstm 셀 하나 내부의 액티베이션 노드 수 = 64
+# rnn 셀 하나 내부의 액티베이션 노드 수 = 64
 n_a = 64
 # output 모양조절 객체
 reshapor = Reshape((1, 78))
-# lstm cell 생성기 객체
+# rnn cell 생성기 객체
 # return_state: 마지막 리턴값을 아웃풋에 추가한다 안한다 결정하는 불린
 LSTM_cell = LSTM(n_a, return_state=True)
 # fc 생성기 객체(아웃풋 차원수, 액티베이션)
 densor = Dense(n_values, activation='softmax')
 
 
-# lstm 모델
+# rnn 모델
 def djmodel(Tx, n_a, n_values):
     # 예약 인풋, a0, c0 생성
     X = Input(shape=(Tx, n_values))

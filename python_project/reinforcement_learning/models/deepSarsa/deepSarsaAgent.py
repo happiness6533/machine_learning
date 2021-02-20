@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import keras.models as models
 import keras.layers as layers
 import keras.optimizers as optimizers
-import reinforcement_learning_test.deepSarsa.environment as environment
+import python_project.reinforcement_learning.models.deepSarsa.environment as environment
 
 
 class DeepSarsaAgent:

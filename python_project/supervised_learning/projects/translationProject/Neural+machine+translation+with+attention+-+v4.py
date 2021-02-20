@@ -50,7 +50,7 @@ dotor = Dot(axes=1)
 
 
 # 어텐션lstm 총정리
-# 1. 어텐션 이전 레이어인 bi-lstm(길이 : input길이)을 작동시켜서 모든 스텝 t에 대한 a(t)를 뽑아낸다
+# 1. 어텐션 이전 레이어인 bi-rnn(길이 : input길이)을 작동시켜서 모든 스텝 t에 대한 a(t)를 뽑아낸다
 # 2. a(t)에 s(t-1)을 복제해서 이어붙이고 적당한 덴스레이어를 거친 다음 소프트맥스를 취하면 알파를 얻는다
 # 3. 알파와 a(t)의 내적합을 계산해서 context(t)를 얻는다
 # 4. context(t)와 s(t-1)과 메모리셀 c(t-1)을 넣고 어텐션lstm(길이 : output길이)을 가동시킨다
@@ -138,7 +138,7 @@ def model(Tx, Ty, n_a, n_s, human_vocab_size, machine_vocab_size):
 
         # Step 2.B: Apply the post-attention LSTM cell to the "context" vector.
         # Don't forget to pass: initial_state = [hidden state, cell state] (≈ 1 line)
-        # 기존의 s, c >> lstm 통과 >> 새로운 s, c
+        # 기존의 s, c >> rnn 통과 >> 새로운 s, c
         s, _, c = post_activation_LSTM_cell(context, initial_state=[s, c])
 
         # Step 2.C: Apply Dense layer to the hidden state output of the post-attention LSTM (≈ 1 line)
